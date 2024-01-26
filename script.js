@@ -29,6 +29,9 @@ init()
 
 console.log(btnNew, btnRoll, btnHold)
 
+//cuando se hace click en el botón roll:
+//el dado se pone visible
+
 btnRoll.addEventListener('click', () => {
   //sacas un número del 1 al 6
   const dice = Math.trunc(Math.random() * 6) + 1
@@ -51,7 +54,3 @@ btnNew.addEventListener('click', () => {
 btnHold.addEventListener('click', () => {
   console.log('Pasar turno')
 })
-
-//TODO:
-//cuando se hace click en el botón roll:
-//el dado se pone visible
