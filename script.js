@@ -11,12 +11,19 @@ const current1El = document.querySelector('#current--1')
 
 //const btnHold = document.getElementsByClassName('.btn--hold')
 
+//Declaramos las variables
+
+let currentScore, scores, activePlayer
+
 //llamar a función init que haga lo siguiente:
 // el dado por defecto que no se vea
 // score1 y score2 a 0
 // currentScore1 y currentScore2 a 0
 
 const init = function () {
+  currentScore = 0
+  activePlayer = 0
+  scores = [0, 0]
   // diceEl.classList.add('hidden')
   diceEl.style.display = 'none'
   score0El.textContent = 0
@@ -44,6 +51,8 @@ btnRoll.addEventListener('click', () => {
     //pierdes turno
   } else {
     //sumar el dado al current score
+    currentScore += dice
+    current0El.textContent = currentScore
   }
 })
 
