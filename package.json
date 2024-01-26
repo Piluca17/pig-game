@@ -5,7 +5,8 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo Hola"
+    "build": "echo Hola",
+    "deploy": "rsync -ahv --exclude=node_modules --exclude=.git -e 'ssh -p 22123' ./ pilar@pilar.certweb.infenlaces.com:/home/pilar/pig-game"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
