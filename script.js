@@ -49,10 +49,15 @@ btnRoll.addEventListener('click', () => {
 
   if (dice === 1) {
     //pierdes turno
+    //TODO: cambiar de jugador (variable activePlayer, color css, currentScore a 0)
+    switchPlayer()
   } else {
     //sumar el dado al current score
     currentScore += dice
-    current0El.textContent = currentScore
+    //TODO: seleccfionar de forma dinámica el textContent
+    document.querySelector(`#current--${activePlayer}`).textContent =
+      currentScore
+    //current0El.textContent = currentScore
   }
 })
 
