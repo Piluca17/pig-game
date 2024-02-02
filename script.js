@@ -64,7 +64,9 @@ btnNew.addEventListener('click', () => {
 //Botón Hold y cambio de jugador
 
 btnHold.addEventListener('click', () => {
-  console.log('Pasar turno')
+  // añadir currentScore al totalScore del jugador activo
+  scores [activePlayer] += currentScore
+  switchtPlayer()
 })
 
 // Funcion cambiar usuario
