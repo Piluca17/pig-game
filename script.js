@@ -66,10 +66,21 @@ btnNew.addEventListener('click', () => {
 btnHold.addEventListener('click', () => {
   // añadir currentScore al totalScore del jugador activo
   scores [activePlayer] += currentScore
-  switchtPlayer()
+  document.querySelector(`#score--${activePlayer}`).textContent =
+    scores[activePlayer]
+  //vemos si finaliza la partida o cambiamos de jugador
+  if (score[activePlayer] >=100){
+    // termina el juego, al jugador activo se le añade la clase winner
+    document
+      .querySelector (`.player--${activePlayer}`)
+      .classList.add('player--winner')
+  } else {
+    // cambiamos de jugador
+    switchtPlayer()
+  }
 })
 
-// Funcion cambiar usuario
+// Función cambiar usuario
 
 function switchtPlayer() {
   document.querySelector(`#current--${activePlayer}`).textContent = 0
@@ -80,7 +91,7 @@ function switchtPlayer() {
   player0El.classList.toggle ('player--active')
   player1El.classList.toggle ('player--active')
   
-  //if (activePlayer === 0) {
+  // if (activePlayer === 0) {
   //  player0El.classList.add ('player--active')
   //  player1El.classList.remove ('player--active')
   // } else {
