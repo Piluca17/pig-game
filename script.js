@@ -62,18 +62,20 @@ btnNew.addEventListener('click', () => {
 })
 
 //Botón Hold y cambio de jugador
-
 btnHold.addEventListener('click', () => {
   // añadir currentScore al totalScore del jugador activo
   scores [activePlayer] += currentScore
   document.querySelector(`#score--${activePlayer}`).textContent =
     scores[activePlayer]
   //vemos si finaliza la partida o cambiamos de jugador
-  if (score[activePlayer] >=100){
+  if (scores[activePlayer] >=100){
     // termina el juego, al jugador activo se le añade la clase winner
     document
       .querySelector (`.player--${activePlayer}`)
       .classList.add('player--winner')
+      .classList.remove ('player--active')
+    // ocultamos el dado  
+    diceEl.style.display = 'none'
   } else {
     // cambiamos de jugador
     switchtPlayer()
