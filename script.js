@@ -57,9 +57,7 @@ btnRoll.addEventListener('click', () => {
 
 //Botón nueva partida
 
-btnNew.addEventListener('click', () => {
-  console.log('New game')
-})
+btnNew.addEventListener('click',init)
 
 //Botón Hold y cambio de jugador
 btnHold.addEventListener('click', () => {
