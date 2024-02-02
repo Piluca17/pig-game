@@ -25,6 +25,10 @@ const init = function () {
   score1El.textContent = 0
   current0El.textContent = 0
   current1El.textContent = 0
+  player0El.classList.remove ('player--winner')
+  player1El.classList.remove ('player--winner')
+  player0El.classList.add ('player--active')
+  player1El.classList.add ('player--active')
 }
 
 init()
