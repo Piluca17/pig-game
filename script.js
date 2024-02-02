@@ -73,6 +73,8 @@ btnHold.addEventListener('click', () => {
     document
       .querySelector (`.player--${activePlayer}`)
       .classList.add('player--winner')
+    document
+      .querySelector (`.player--${activePlayer}`)  
       .classList.remove ('player--active')
     // ocultamos el dado  
     diceEl.style.display = 'none'
